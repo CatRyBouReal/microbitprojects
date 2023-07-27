@@ -4,14 +4,14 @@ from matplotlib import pyplot
 
 
 baudrate = 115200
-s = serial.Serial('COM6', baudrate)
+sr = serial.Serial('COM6', baudrate)
 pyplot.ion()
 
 time_values = []
 ambient_light_values = []
 
 while True:
-    time = time.time()
+    t0 = time.time()
     ambient_light = int(sr.readline().decode('utf-8'))
     
     time_values.append(t0)
